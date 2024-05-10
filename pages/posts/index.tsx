@@ -1,4 +1,4 @@
-import posts, {Post} from "@/lib/assets/posts";
+import posts, {Post} from "~/lib/assets/posts";
 import Link from "next/link";
 
 interface PostPageProps {

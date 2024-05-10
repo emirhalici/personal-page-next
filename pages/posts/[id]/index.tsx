@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import posts from "@/lib/assets/posts";
-import { Post } from "@/lib/assets/posts";
+import posts from "~/lib/assets/posts";
+import { Post } from "~/lib/assets/posts";
 
 
 interface PostPageProps {
