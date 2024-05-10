@@ -1,12 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useParams } from "next/navigation";
 import posts from "@/lib/assets/posts";
-import { useRouter } from "next/router";
+import { Post } from "@/lib/assets/posts";
 
-export default function Page({ post }: { post: any }) {
-  const router = useRouter();
-  const { id } = router.query;
 
+interface PostPageProps {
+  post: Post;
+}
+
+export default function Page({ post }: PostPageProps) {
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -20,6 +21,7 @@ export default function Page({ post }: { post: any }) {
 }
 
 // this is how you achieve SSG read more https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation
+// https://vercel.com/blog/nextjs-server-side-rendering-vs-static-generation
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postId = parseInt(params?.id as string, 10);
@@ -39,6 +41,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: false, // fallback: false means pages that don’t have the correct id will 404.
   };
 };

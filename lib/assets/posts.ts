@@ -1,4 +1,10 @@
-const posts = [
+export type Post = {
+  id: number;
+  title: string;
+  content: string;
+};
+
+const posts: Post[] = [
   {
     id: 1,
     title: "Post 1",
