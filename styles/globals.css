@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* use this link for generating shadcn themes https://gradient.page/tools/shadcn-ui-theme-generator */
 @layer base {
   :root {
     --background: 0 0% 100%;
