@@ -2,6 +2,7 @@ import { Manrope } from "next/font/google";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { SocialButtons } from "~/components/ui/social-buttons";
+import { Url } from "~/components/ui/url";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -21,7 +22,27 @@ export default function Home() {
             <Button variant={"default"}>Read the blog</Button>
           </Link>
           <Button variant={"outline"}>Resume</Button>
-          <Button variant={"outline"}>Projects</Button>
+        </div>
+        <h2 className="text-xl font-bold opacity-90 pt-4">Projects</h2>
+        <div className="pt-2 flex flex-col justify-start items-start">
+          <Button variant={"link"} className="p-0">
+            <Url
+              href={"https://arithmatik.emir.bio/"}
+              children="- Arithmatik"
+            />
+          </Button>
+          <Button variant={"link"} className="p-0">
+            <Url
+              href={"https://dartdateformatter.emir.bio/"}
+              children="- Dart Date Formatter"
+            />
+          </Button>
+          <Button variant={"link"} className="p-0">
+            <Url
+              href={"https://github.com/emirhalici/react-rendering-playground"}
+              children="- React Rendering Playground"
+            />
+          </Button>
         </div>
       </div>
     </main>
