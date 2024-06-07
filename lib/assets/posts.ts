@@ -1,8 +1,8 @@
-export type Post = {
+export interface Post {
   id: number;
   title: string;
   content: string;
-};
+}
 
 const posts: Post[] = [
   {

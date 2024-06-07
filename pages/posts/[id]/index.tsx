@@ -9,8 +9,6 @@ interface PostPageProps {
 export default function Page({ post }: PostPageProps) {
   if (!post) {
     return <div>Loading...</div>;
-
-    
   }
 
   return (

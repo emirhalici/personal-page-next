@@ -5,8 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Emir Halici</title>
-        <meta name="description" content="Emir Halici's personal website" />
+        <title>Emir Halıcı</title>
+        <meta name="description" content="Emir Halıcı's personal website" />
         <link rel="icon" href="" />
       </Head>
       <body>
