@@ -1,26 +1,25 @@
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Link from "next/link";
-const inter = Inter({ subsets: ["latin"] });
-
-interface Data {
-  name: string;
-}
+import { Button } from "~/components/ui/button";
+const manrope = Manrope({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-start p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start p-24 ${manrope.className}`}
     >
       <div className="w-1/2 justify-start">
-        <h1 className="pb-2 text-3xl font-bold">Hello, I'm Emir 👋</h1>
-        <h2 className="text-2xl">
-          I am a software developer based in Türkiye.
+        <h1 className="pb-8 text-3xl font-semibold">Hello, I'm Emir 👋</h1>
+        <h2 className={`text-2xl`}>
+          I am a software developer based in <b>Türkiye</b>.
         </h2>
-      </div>
-      <div className="my-8 flex w-1/2 flex-col justify-start gap-2">
-        <Link href="/posts">
-          See all <span className="font-semibold underline"> Posts</span>
-        </Link>
+        <div className="pt-6 space-x-2 space-y-2">
+          <Link href="/posts">
+            <Button variant={"default"}>Read the blog</Button>
+          </Link>
+          <Button variant={"outline"}>Resume</Button>
+          <Button variant={"outline"}>Projects</Button>
+        </div>
       </div>
     </main>
   );
