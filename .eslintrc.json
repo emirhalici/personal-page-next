@@ -8,7 +8,6 @@
 
   "rules": {
     "@typescript-eslint/comma-spacing": "error",
-    "@typescript-eslint/consistent-type-definitions": "error",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/indent": "off"
   }
