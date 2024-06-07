@@ -21,7 +21,7 @@ export default function Page({ post }: PostPageProps) {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${manrope.className}`}
     >
       <Header />
-      <div className="flex flex-col items-start w-1/2 pt-4">
+      <div className="flex flex-col items-start w-11/12 sm:w-1/2 pt-4">
         <div className="flex flex-row w-full pb-5 items-center">
           <Link
             href="/posts"
