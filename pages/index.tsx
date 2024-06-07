@@ -12,7 +12,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-start p-24 ${manrope.className}`}
     >
       <div className="w-1/2 justify-start">
-        <h1 className="pb-5 text-5xl font-semibold">Hello, I'm Emir 👋</h1>
+        <h1 className="pb-5 text-5xl font-semibold">Hello, I&apos;m Emir 👋</h1>
         <h2 className="text-2xl opacity-60">
           I am a software developer based in <b>Türkiye</b>.
         </h2>
@@ -26,22 +26,19 @@ export default function Home() {
         <h2 className="text-xl font-bold opacity-90 pt-4">Projects</h2>
         <div className="pt-2 flex flex-col justify-start items-start">
           <Button variant={"link"} className="p-0">
-            <Url
-              href={"https://arithmatik.emir.bio/"}
-              children="- Arithmatik"
-            />
+            <Url href={"https://arithmatik.emir.bio/"}>- Arithmatik</Url>
           </Button>
           <Button variant={"link"} className="p-0">
-            <Url
-              href={"https://dartdateformatter.emir.bio/"}
-              children="- Dart Date Formatter"
-            />
+            <Url href={"https://dartdateformatter.emir.bio/"}>
+              - Dart Date Formatter
+            </Url>
           </Button>
           <Button variant={"link"} className="p-0">
             <Url
               href={"https://github.com/emirhalici/react-rendering-playground"}
-              children="- React Rendering Playground"
-            />
+            >
+              - React Rendering Playground
+            </Url>
           </Button>
         </div>
       </div>

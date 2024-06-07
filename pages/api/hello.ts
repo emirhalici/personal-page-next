@@ -5,10 +5,7 @@ interface Data {
   name: string;
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+export default function handler(_: NextApiRequest, res: NextApiResponse<Data>) {
   // if you wan to use different HTTP methods in the same route use this method
   // if (req.method === "POST") {
   //   // Process a POST request

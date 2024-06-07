@@ -23,21 +23,18 @@ export function SocialButtons() {
   const size = 22;
   return (
     <div className="flex py-4 space-x-2">
-      <IconButton
-        label="Github"
-        href="https://github.com/emirhalici"
-        children={<FaGithub size={size} />}
-      />
-      <IconButton
-        label="Medium"
-        href="https://medium.com/@emirhalici"
-        children={<FaMediumM size={size} />}
-      />
+      <IconButton label="Github" href="https://github.com/emirhalici">
+        <FaGithub size={size} />
+      </IconButton>
+      <IconButton label="Medium" href="https://medium.com/@emirhalici">
+        <FaMediumM size={size} />
+      </IconButton>
       <IconButton
         label="Linkedin"
         href="https://www.linkedin.com/in/emirhalici/"
-        children={<FaLinkedinIn size={size} />}
-      />
+      >
+        <FaLinkedinIn size={size} />
+      </IconButton>
     </div>
   );
 }
