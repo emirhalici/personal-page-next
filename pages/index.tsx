@@ -10,10 +10,10 @@ const manrope = Manrope({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-start py-6 px-24 ${manrope.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${manrope.className}`}
     >
       <Header />
-      <div className="w-1/2 justify-start pt-6">
+      <div className="w-11/12 sm:w-1/2 justify-start pt-6">
         <h1 className="pb-5 text-5xl font-semibold">Hello, I&apos;m Emir 👋</h1>
         <h2 className="text-2xl opacity-60">
           I am a software developer based in <b>Türkiye</b>.
