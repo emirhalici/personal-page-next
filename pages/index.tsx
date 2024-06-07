@@ -1,6 +1,8 @@
 import { Manrope } from "next/font/google";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
+import { SocialButtons } from "~/components/ui/social-buttons";
+
 const manrope = Manrope({ subsets: ["latin"] });
 
 export default function Home() {
@@ -13,7 +15,8 @@ export default function Home() {
         <h2 className={`text-2xl`}>
           I am a software developer based in <b>Türkiye</b>.
         </h2>
-        <div className="pt-6 space-x-2 space-y-2">
+        <SocialButtons />
+        <div className="space-x-2 space-y-2">
           <Link href="/posts">
             <Button variant={"default"}>Read the blog</Button>
           </Link>
