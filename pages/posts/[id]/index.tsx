@@ -19,9 +19,6 @@ export default function Page({ post }: PostPageProps) {
   );
 }
 
-// this is how you achieve SSG read more https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation
-// https://vercel.com/blog/nextjs-server-side-rendering-vs-static-generation
-
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postId = parseInt(params?.id as string, 10);
   const post = posts.find((post) => post.id === postId);

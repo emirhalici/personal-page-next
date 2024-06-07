@@ -1,5 +1,10 @@
 import posts, { Post } from "~/lib/assets/posts";
 import Link from "next/link";
+import { Button } from "~/components/ui/button";
+import { Manrope } from "next/font/google";
+import { Header } from "~/components/ui/header";
+
+const manrope = Manrope({ subsets: ["latin"] });
 
 interface PostPageProps {
   posts: Post[];
@@ -7,16 +12,23 @@ interface PostPageProps {
 
 export default function Page({ posts }: PostPageProps) {
   return (
-    <div className="flex justify-start p-24 items-center w-1/2 flex-col">
-      <h1 className="text-3xl mb-4 font-bold">POSTS</h1>
-      <div className="flex flex-col gap-4">
-        {posts.map((post) => (
-          <Link key={post.id} href={`/posts/${post.id}`}>
-            {post.title}
-          </Link>
-        ))}
+    <main
+      className={`flex min-h-screen flex-col items-center justify-start py-6 px-24 ${manrope.className}`}
+    >
+      <Header />
+      <div className="w-1/2 justify-start pt-6">
+        <h1 className="pb-5 text-4xl font-semibold">📘 Posts</h1>
+        <ul className="flex flex-col justify-start items-start">
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Button variant={"link"} className="p-0 text-lg">
+                <Link href={`/posts/${post.id}`}>- {post.title}</Link>
+              </Button>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </main>
   );
 }
 
