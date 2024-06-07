@@ -11,8 +11,8 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-start p-24 ${manrope.className}`}
     >
       <div className="w-1/2 justify-start">
-        <h1 className="pb-8 text-3xl font-semibold">Hello, I'm Emir 👋</h1>
-        <h2 className={`text-2xl`}>
+        <h1 className="pb-5 text-5xl font-semibold">Hello, I'm Emir 👋</h1>
+        <h2 className="text-2xl opacity-60">
           I am a software developer based in <b>Türkiye</b>.
         </h2>
         <SocialButtons />
