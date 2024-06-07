@@ -23,7 +23,8 @@ export default function Home() {
           <Link href="/posts">
             <Button variant={"default"}>Read the blog</Button>
           </Link>
-          <Button variant={"outline"}>Resume</Button>
+          {/* TODO: RESUME */}
+          {/* <Button variant={"outline"}>Resume</Button> */}
         </div>
         <h2 className="text-xl font-bold opacity-90 pt-4">Projects</h2>
         <div className="pt-2 flex flex-col justify-start items-start">
