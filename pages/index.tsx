@@ -16,12 +16,17 @@ export default function Home() {
       <div className="w-11/12 sm:w-1/2 justify-start pt-6">
         <h1 className="pb-5 text-5xl font-semibold">Hello, I&apos;m Emir 👋</h1>
         <h2 className="text-2xl opacity-60">
-          I am a software developer based in <b>Türkiye</b>.
+          <p>
+            I am a software developer based in <b>Türkiye</b>.
+          </p>
         </h2>
         <SocialButtons />
         <div className="space-x-2 space-y-2">
           <Link href="/posts">
             <Button variant={"default"}>Read the blog</Button>
+          </Link>
+          <Link href="/about">
+            <Button variant={"outline"}>About me</Button>
           </Link>
           {/* TODO: RESUME */}
           {/* <Button variant={"outline"}>Resume</Button> */}
