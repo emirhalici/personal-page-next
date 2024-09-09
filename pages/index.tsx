@@ -23,7 +23,7 @@ export default function Home() {
         <SocialButtons />
         <div className="space-x-2 space-y-2">
           <Link href="/posts">
-            <Button variant={"default"}>Read the blog</Button>
+            <Button variant={"default"}>Blog</Button>
           </Link>
           <Link href="/about">
             <Button variant={"outline"}>About me</Button>

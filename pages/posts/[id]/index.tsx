@@ -1,27 +1,28 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Header } from "~/components/ui/header";
-import posts from "~/lib/assets/posts";
-import { Post } from "~/lib/assets/posts";
 import { Manrope } from "next/font/google";
 import { FaChevronLeft } from "react-icons/fa6";
 import Link from "next/link";
+import { getPostData, getAllPostIds } from "~/lib/markdown";
 
 const manrope = Manrope({ subsets: ["latin"] });
+
 interface PostPageProps {
-  post: Post;
+  postData: {
+    id: string;
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
 }
 
-export default function Page({ post }: PostPageProps) {
-  if (!post) {
-    return <div>Loading...</div>;
-  }
-
+export default function Page({ postData }: PostPageProps) {
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${manrope.className}`}
     >
       <Header />
-      <div className="flex flex-col items-start w-11/12 sm:w-1/2 pt-4">
+      <article className="w-11/12 sm:w-3/4 lg:w-2/3 xl:w-1/2 pt-4">
         <div className="flex flex-row w-full pb-5 items-center">
           <Link
             href="/posts"
@@ -29,32 +30,37 @@ export default function Page({ post }: PostPageProps) {
           >
             <FaChevronLeft />
           </Link>
-          <h1 className="text-4xl font-semibold">📖 {post.title}</h1>
+          <h1 className="text-4xl font-semibold">📖 {postData.title}</h1>
         </div>
-        <p>{post.content}</p>
-      </div>
+        <div className="text-sm text-gray-500 mb-4">
+          Published on {publishDate()}
+        </div>
+        <div
+          className="prose prose-sm sm:prose dark:prose-invert"
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        />
+      </article>
     </main>
   );
+
+  function publishDate() {
+    return new Date(postData.date).toISOString().split("T")[0];
+  }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postId = parseInt(params?.id as string, 10);
-  const post = posts.find((post) => post.id === postId);
-
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getAllPostIds();
   return {
-    props: {
-      post,
-    },
+    paths,
+    fallback: false,
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = posts.map((post) => ({
-    params: { id: post.id.toString() },
-  }));
-
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params?.id as string);
   return {
-    paths,
-    fallback: false, // fallback: false means pages that don’t have the correct id will 404.
+    props: {
+      postData,
+    },
   };
 };

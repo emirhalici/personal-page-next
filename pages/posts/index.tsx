@@ -1,13 +1,17 @@
-import posts, { Post } from "~/lib/assets/posts";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { Manrope } from "next/font/google";
 import { Header } from "~/components/ui/header";
+import { getSortedPostsData } from "~/lib/markdown";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
 interface PostPageProps {
-  posts: Post[];
+  posts: {
+    id: string;
+    title: string;
+    date: string;
+  }[];
 }
 
 export default function Page({ posts }: PostPageProps) {
@@ -33,6 +37,7 @@ export default function Page({ posts }: PostPageProps) {
 }
 
 export async function getStaticProps() {
+  const posts = getSortedPostsData();
   return {
     props: {
       posts,
