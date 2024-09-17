@@ -26,6 +26,7 @@ print(jack.last_name) # Pitt
 As we can see, to have a class to represent our model of a structure; we need to write a lot of boiler plate to set up variables. Even after all that, equality comparison by value or string representation is yet to be implemented.
 
 ## Dataclasses to the Rescue
+
 `dataclasses` module was introduced to Python in 3.7 and has been stable ever since. It includes implementation for comparison, toString and a bunch of other things out of the box.
 
 ```python
@@ -46,7 +47,7 @@ print(jack.last_name) # Pitt
 print(PersonModel(first_name="Emir", last_name="Halıcı")==PersonModel()) # False
 ```
 
-Now we have a great structure type system where we can define our models and use them freely in our project, provided that types are actually what we think they are. Remember: typing/type hints are loose in Python, they are not enforced at all. It is *merely a hint* to the developer, in the *literal* sense that we think it's going to be this type.
+Now we have a great structure type system where we can define our models and use them freely in our project, provided that types are actually what we think they are. Remember: typing/type hints are loose in Python, they are not enforced at all. It is _merely a hint_ to the developer, in the _literal_ sense that we think it's going to be this type.
 
 Now comes the next problem, how do I construct my models from a JSON payload? Or better yet, how do I convert this to a JSON? Now we are starting to reach the edge of dataclasses support out of the box. There are numerous packages that provide with JSON serialization/deserialization techniques, but we'll use our own implementation for our use case.
 
@@ -116,7 +117,7 @@ def snake_to_camel(input: str) -> str:
         return camel_cased[0].lower() + camel_cased[1:]
     else:
         return camel_cased
-    
+
 __camel_to_snake_pattern = re.compile(r"(?<!^)(?=[A-Z])")
 def camel_to_snake(input: str) -> str:
     return __camel_to_snake_pattern.sub("_", input).lower()
@@ -144,7 +145,7 @@ class PersonModel:
                 if value is not None or include_null
             },
         )
-    
+
     @classmethod
     def from_json(cls: Type[T], json: dict) -> T:
         """Constructs `this` from given json. Assumes camel case convention is used and converts to camel case.
@@ -257,3 +258,5 @@ print(older_brad)  # PersonModel(age=30, first_name='Brad', last_name='Pitt')
 In this short blog post, we've looked into adding JSON serialization functionality to already existing data classes feature of Python. This is by no means a replacement for existing libraries.
 
 This is just an exploration of how data classes work and be customized. We can also extend the functionality furthermore, like providing `copy_with` method to create a shallow copy of the instance. We're leaving it here as my main goal was to work on JSON serialization part. Thank you very much for following so far!
+
+> This post is also available in [Medium](https://medium.com/@emirhalici/unlocking-the-power-of-python-data-classes-w-json-serialization-3e5a24d98e84).
