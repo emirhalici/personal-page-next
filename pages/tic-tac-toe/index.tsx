@@ -1,7 +1,8 @@
+"use client";
 import { Manrope } from "next/font/google";
 import { Header } from "~/components/ui/header";
 import { useState } from "react";
-import { BoardSquareValue, Player, useBoard } from "./use-board";
+import { useBoard, BoardSquareValue, Player } from "../../lib/use-board";
 import { Button } from "~/components/ui/button";
 import { XIcon, Circle } from "lucide-react";
 
