@@ -64,7 +64,7 @@ class BoardController {
       // Update the last positions of the player
       const lastPositions =
         player === "X" ? newBoard.xLastPositions : newBoard.oLastPositions;
-      if (lastPositions.length > 1) {
+      if (lastPositions.length > 2) {
         const [xRow, xCol] = lastPositions.shift()!;
         newBoard.square[xRow][xCol] = null;
       }
