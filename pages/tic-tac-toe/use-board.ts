@@ -2,7 +2,7 @@ import { useState } from "react";
 
 type Prettify<T> = {
   [K in keyof T]: T[K];
-} & {};
+} & NonNullable<unknown>;
 
 export type Player = "X" | "O";
 export type BoardSquareValue = Prettify<Player | null>;
@@ -14,12 +14,12 @@ export type BoardSquare = [
   [BoardSquareValue, BoardSquareValue, BoardSquareValue],
 ];
 
-export type Board = {
+export interface Board {
   square: BoardSquare;
   xLastPositions: Position[];
   oLastPositions: Position[];
   winner: Player | null;
-};
+}
 
 class BoardController {
   initialize(): Board {
@@ -113,7 +113,7 @@ class BoardController {
 }
 
 export function useBoard() {
-  const [boardController, _] = useState(new BoardController());
+  const [boardController] = useState(new BoardController());
   const [board, setBoard] = useState(boardController.initialize());
 
   const handleClick = (row: number, col: number, player: Player) => {
