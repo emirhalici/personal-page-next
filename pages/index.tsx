@@ -51,6 +51,9 @@ export default function Home() {
           <Button variant={"link"} className="p-0">
             <Link href={"/useful-links"}>- Useful Links</Link>
           </Button>
+          <Button variant={"link"} className="p-0">
+            <Link href={"/tic-tac-toe"}>- Tic tac toe</Link>
+          </Button>
         </div>
       </div>
     </main >
