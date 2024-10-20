@@ -1,6 +1,5 @@
 import { Lexend } from "next/font/google";
 import { Header } from "~/components/ui/header";
-import { screenWidth } from "~/lib/utils";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -10,7 +9,7 @@ export default function Page() {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className}`}
     >
       <Header />
-      <div className={`${screenWidth} justify-start pt-6 font-light`}>
+      <div className={`w-11/12 max-w-xl justify-start pt-6 font-light`}>
         <h1 className="pb-5 text-4xl font-normal">📑 About</h1>
         <p>
           I&apos;m Emir, a software developer based in Türkiye. I enjoy fiddling with code and building prototypes.
