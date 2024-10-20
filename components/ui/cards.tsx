@@ -15,13 +15,21 @@ export function SocialButtons() {
       <p className="font-light opacity-60 text-sm pb-2">Find me elsewhere</p>
       <div className="flex flex-col space-y-2 border border-input rounded-lg bg-primary-foreground p-1">
         <div className="flex flex-col">
-          <SocialButton title={"Github"} href={"https://github.com/emirhalici"} children={<FaGithub size={iconSize} />} />
+          <SocialButton title={"Github"} href={"https://github.com/emirhalici"}>
+            <FaGithub size={iconSize} />
+          </SocialButton>
           {divider}
-          <SocialButton title={"Medium"} href={"https://medium.com/@emirhalici"} children={<FaMediumM size={iconSize} />} />
+          <SocialButton title={"Medium"} href={"https://medium.com/@emirhalici"} >
+            <FaMediumM size={iconSize} />
+          </SocialButton>
           {divider}
-          <SocialButton title={"Linkedin"} href={"https://www.linkedin.com/in/emirhalici/"} children={<FaLinkedinIn size={iconSize} />} />
+          <SocialButton title={"Linkedin"} href={"https://www.linkedin.com/in/emirhalici/"} >
+            <FaLinkedinIn size={iconSize} />
+          </SocialButton>
           {divider}
-          <SocialButton title={"Email Me"} href={"mailto:dev@emir.bio"} children={<BiLogoGmail size={iconSize} />} />
+          <SocialButton title={"Email Me"} href={"mailto:dev@emir.bio"} >
+            <BiLogoGmail size={iconSize} />
+          </SocialButton>
         </div>
       </div>
     </div>
@@ -29,7 +37,7 @@ export function SocialButtons() {
 }
 
 
-type SocialButtonProps = {
+interface SocialButtonProps {
   title: string;
   href: string;
   children: React.ReactNode;
@@ -58,41 +66,40 @@ export function Projects() {
     <div>
       <p className="font-light opacity-60 text-sm pb-2 pt-6">Projects</p>
       <div className="flex flex-col border border-input rounded-lg bg-primary-foreground p-1">
-
         <ProjectButton
           title={"Arithmatik"}
           href={"https://arithmatik.emir.bio/"}
-          children={<FaGamepad size={16} />}
-          description={"Arithmetic based math game I launched with a couple of days"}
-        />
+          description={"Arithmetic based math game I launched with a couple of days"}>
+          <FaGamepad size={16} />
+        </ProjectButton>
         {divider}
         <ProjectButton
           title={"Dart Date Formatter"}
           href={"https://dartdateformatter.emir.bio/"}
-          children={<SiDart size={16} />}
-          description={"A simple date formatter library for Dart"}
-        />
+          description={"A simple date formatter library for Dart"}>
+          {<SiDart size={16} />}
+        </ProjectButton>
         {divider}
         <ProjectButton
           title={"React Rendering Playground"}
           href={"https://github.com/emirhalici/react-rendering-playground"}
-          children={<FaGithub size={16} />}
-          description={"A playground for experimenting with React rendering"}
-        />
+          description={"A playground for experimenting with React rendering"}>
+          {<FaGithub size={16} />}
+        </ProjectButton>
         {divider}
         <ProjectButton
           title={"Tic Tac Toe"}
           href={"/tic-tac-toe"}
-          children={<FaGamepad size={16} />}
-          description={"Tic Tac Toe with a twist"}
-        />
+          description={"Tic Tac Toe with a twist"}>
+          {<FaGamepad size={16} />}
+        </ProjectButton>
         {divider}
         <ProjectButton
           title={"Useful Links"}
           href={"/useful-links"}
-          children={<MdLanguage size={16} />}
-          description={"Small curation of web pages I find useful"}
-        />
+          description={"Small curation of web pages I find useful"}>
+          {<MdLanguage size={16} />}
+        </ProjectButton>
 
       </div>
     </div>
@@ -101,7 +108,7 @@ export function Projects() {
 
 
 
-type ProjectButtonProps = {
+interface ProjectButtonProps {
   title: string;
   href: string;
   description: string;

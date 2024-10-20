@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className="pb-5 text-3xl">Software engineer fixing problems and writing code.</h1>
         <div className="text-sm opacity-80 font-light space-y-3">
           <p>
-            Hi there 👋. I&apos;m Emir, a software developer based in <b>Türkiye</b>. I specialise in mobile applications and it's supporing infrastructures.
+            Hi there 👋. I&apos;m Emir, a software developer based in <b>Türkiye</b>. I specialise in mobile applications and it&apos;s supporing infrastructures.
           </p>
           <p>
             I&apos;m currently working at Gemstone Lights where I help build the best smart lighting on the market!
