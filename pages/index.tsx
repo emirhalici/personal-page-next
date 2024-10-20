@@ -16,9 +16,9 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 ${lexend.className}`}
     >
       <Header />
-      <div className="w-11/12 max-w-xl justify-start pt-6">
-        <h1 className="pb-5 text-3xl">Software engineer fixing problems and writing code.</h1>
-        <div className="text-sm opacity-80 font-light space-y-3">
+      <div className="w-11/12 max-w-2xl justify-start pt-6">
+        <h1 className="pb-5 text-4xl">Software engineer fixing problems and writing code.</h1>
+        <div className="text-lg opacity-80 font-light space-y-3">
           <p>
             Hi there 👋. I&apos;m Emir, a software developer based in <b>Türkiye</b>. I specialise in mobile applications and it&apos;s supporing infrastructures.
           </p>

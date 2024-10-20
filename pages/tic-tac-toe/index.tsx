@@ -30,7 +30,7 @@ export default function Page() {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className} font-light`}
     >
       <Header />
-      <div className={`w-11/12 max-w-xl justify-start pt-6`}>
+      <div className={`w-11/12 max-w-2xl justify-start pt-6`}>
         <h1 className="pb-5 text-4xl font-normal">
           🕹️ Tic-tac-toe with a twist
         </h1>

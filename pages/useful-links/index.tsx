@@ -22,7 +22,7 @@ export default function Page({ links }: LinksPageProps) {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className} font-normal`}
     >
       <Header />
-      <div className={`w-11/12 max-w-xl justify-start pt-6`}>
+      <div className={`w-11/12 max-w-2xl justify-start pt-6`}>
         <h1 className="pb-5 text-4xl font-normal">🔗 Links</h1>
         <ul className="flex flex-col justify-start items-start">
           {links.map((link) => (

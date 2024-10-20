@@ -7,11 +7,11 @@ import { MdLanguage } from "react-icons/md";
 const iconSize = 16;
 
 export function SocialButtons() {
-  const divider = <hr className="border-t border-input mx-2" />;
+  const divider = <hr className="border-t border-input mx-3" />;
 
   return (
     <div>
-      <p className="font-light opacity-60 text-sm pb-2">Find me elsewhere</p>
+      <p className="font-light opacity-60 pb-2">Find me elsewhere</p>
       <div className="flex flex-col space-y-2 border border-input rounded-lg bg-primary-foreground p-1">
         <div className="flex flex-col">
           <SocialButton title={"Github"} href={"https://github.com/emirhalici"}>
@@ -53,17 +53,17 @@ function SocialButton(props: SocialButtonProps) {
       <div className="bg-accent p-1.5 rounded-lg">
         {props.children}
       </div>
-      <span className="text-xs font-normal p-2">{props.title}</span>
+      <span className="font-normal p-2">{props.title}</span>
     </a>
   );
 }
 
 
 export function Projects() {
-  const divider = <hr className="border-t border-input mx-2" />;
+  const divider = <hr className="border-t border-input mx-3" />;
   return (
     <div>
-      <p className="font-light opacity-60 text-sm pb-2 pt-6">Projects</p>
+      <p className="font-light opacity-60 pb-2 pt-6">Projects</p>
       <div className="flex flex-col border border-input rounded-lg bg-primary-foreground p-1">
         <ProjectButton
           title={"Arithmatik"}
@@ -126,9 +126,9 @@ function ProjectButton(props: ProjectButtonProps) {
         <div className="bg-accent p-1.5 rounded-lg">
           {props.children}
         </div>
-        <span className="text-sm font-normal p-2">{props.title}</span>
+        <span className="font-normal text-lg p-2">{props.title}</span>
       </div>
-      <span className="font-light opacity-60 text-xs pt-1 pb-2">{props.description}</span>
+      <span className="font-light opacity-60 pt-1 pb-2">{props.description}</span>
     </a>
   );
 }
