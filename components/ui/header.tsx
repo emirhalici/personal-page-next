@@ -1,10 +1,11 @@
 import { Manrope } from "next/font/google";
 import Link from "next/link";
+import { screenWidth } from "~/lib/utils";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export function Header() {
   return (
-    <header className={`w-11/12 sm:w-1/2 ${manrope.className} pb-4`}>
+    <header className={`${screenWidth} ${manrope.className} pb-4`}>
       <div className="flex flex-col items-start">
         <h1 className="text-lg font-semibold text-primary hover:opacity-80 transition-all">
           <Link href="/">Emir Halıcı</Link>

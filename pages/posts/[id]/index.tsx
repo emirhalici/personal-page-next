@@ -1,11 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Header } from "~/components/ui/header";
-import { Manrope } from "next/font/google";
+import { Lexend } from "next/font/google";
 import { FaChevronLeft } from "react-icons/fa6";
 import Link from "next/link";
 import { getPostData, getAllPostIds } from "~/lib/markdown";
+import { screenWidth } from "~/lib/utils";
 
-const manrope = Manrope({ subsets: ["latin"] });
+
+const lexend = Lexend({ subsets: ["latin"] });
 
 interface PostPageProps {
   postData: {
@@ -19,10 +21,10 @@ interface PostPageProps {
 export default function Page({ postData }: PostPageProps) {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${manrope.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className} font-light`}
     >
       <Header />
-      <article className="w-11/12 sm:w-3/4 lg:w-2/3 xl:w-1/2 pt-4">
+      <article className={`${screenWidth} pt-4`}>
         <div className="flex flex-row w-full pb-5 items-center">
           <Link
             href="/posts"
@@ -30,7 +32,7 @@ export default function Page({ postData }: PostPageProps) {
           >
             <FaChevronLeft />
           </Link>
-          <h1 className="text-4xl font-semibold">📖 {postData.title}</h1>
+          <h1 className="text-4xl font-normal">📖 {postData.title}</h1>
         </div>
         <div className="text-sm text-gray-500 mb-4">
           Published on {publishDate()}

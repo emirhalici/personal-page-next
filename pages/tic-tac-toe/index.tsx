@@ -1,12 +1,14 @@
 "use client";
-import { Manrope } from "next/font/google";
 import { Header } from "~/components/ui/header";
 import { useState } from "react";
 import { useBoard, BoardSquareValue, Player } from "../../lib/use-board";
 import { Button } from "~/components/ui/button";
 import { XIcon, Circle } from "lucide-react";
+import { screenWidth } from "~/lib/utils";
+import { Lexend } from "next/font/google";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"] });
+
 
 export default function Page() {
   const { board, handleClick, canClick, reset } = useBoard();
@@ -26,18 +28,18 @@ export default function Page() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${manrope.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className} font-light`}
     >
       <Header />
-      <div className="w-11/12 sm:w-1/2 justify-start pt-6">
-        <h1 className="pb-5 text-4xl font-semibold">
+      <div className={`${screenWidth} justify-start pt-6`}>
+        <h1 className="pb-5 text-4xl font-normal">
           🕹️ Tic-tac-toe with a twist
         </h1>
         <p className="pb-2">
           Tic-tac-toe as we all know, except that it goes on forever until you
           win or lose. inspired from this{" "}
           <a
-            className="opacity-70 font-semibold underline-offset-4 hover:underline"
+            className="opacity-70 font-normal underline-offset-4 hover:underline"
             href="https://x.com/Rainmaker1973/status/1837310784474689998"
             target="_blank"
             rel="noopener noreferrer"
@@ -94,7 +96,7 @@ function PlayerStatus({
 }) {
   return (
     <div className="flex items-center gap-2 pb-4">
-      <p className="font-semibold text-lg">
+      <p className="text-lg">
         {winner ? "Winner" : "Player turn"}:
       </p>
       <BoardSquareIcon cell={winner ?? player} />
