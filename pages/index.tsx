@@ -10,7 +10,7 @@ import { Url } from "~/components/ui/url";
 const lexend = Lexend({ subsets: ["latin"] });
 
 export default function Home() {
-  const urlStyle = 'underline text-primary hover:text-primary';
+  const urlStyle = 'underline text-primary relative hover:bg-accent hover:-m-1 hover:p-1 rounded transition-all duration-200';
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 ${lexend.className}`}
@@ -39,4 +39,5 @@ export default function Home() {
     </main >
   );
 }
+
 
