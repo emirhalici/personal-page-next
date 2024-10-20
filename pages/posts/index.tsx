@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Lexend } from "next/font/google";
 import { Header } from "~/components/ui/header";
 import { getSortedPostsData } from "~/lib/markdown";
-import { cn, screenWidth } from "~/lib/utils";
+import { cn } from "~/lib/utils";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function Page({ posts }: PostPageProps) {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className} font-light`}
     >
       <Header />
-      <div className={`${screenWidth} justify-start pt-6`}>
+      <div className="w-11/12 max-w-xl justify-start pt-6">
         <h1 className="pb-5 text-4xl font-normal">📘 Posts</h1>
         <ul className="flex flex-col justify-start items-start">
           {posts.map((post) => (

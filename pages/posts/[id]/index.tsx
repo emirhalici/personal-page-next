@@ -4,7 +4,6 @@ import { Lexend } from "next/font/google";
 import { FaChevronLeft } from "react-icons/fa6";
 import Link from "next/link";
 import { getPostData, getAllPostIds } from "~/lib/markdown";
-import { screenWidth } from "~/lib/utils";
 
 
 const lexend = Lexend({ subsets: ["latin"] });
@@ -24,7 +23,7 @@ export default function Page({ postData }: PostPageProps) {
       className={`flex min-h-screen flex-col items-center justify-start py-6 px-2 md:px-24 ${lexend.className} font-light`}
     >
       <Header />
-      <article className={`${screenWidth} pt-4`}>
+      <article className="w-11/12 max-w-xl pt-4">
         <div className="flex flex-row w-full pb-5 items-center">
           <Link
             href="/posts"
