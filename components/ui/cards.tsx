@@ -3,12 +3,11 @@ import { FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
 import { FaGamepad } from "react-icons/fa6";
 import { SiDart } from "react-icons/si";
 import { MdLanguage } from "react-icons/md";
-import { Separator } from "./separator";
 
 const iconSize = 16;
 
 export function SocialButtons() {
-  const divider = <Separator className="mx-2" />;
+  const divider = <hr className="border-t border-input mx-2" />;
 
   return (
     <div>
@@ -61,7 +60,7 @@ function SocialButton(props: SocialButtonProps) {
 
 
 export function Projects() {
-  const divider = <Separator className="mx-2" />;
+  const divider = <hr className="border-t border-input mx-2" />;
   return (
     <div>
       <p className="font-light opacity-60 text-sm pb-2 pt-6">Projects</p>
@@ -76,7 +75,7 @@ export function Projects() {
         <ProjectButton
           title={"Dart Date Formatter"}
           href={"https://dartdateformatter.emir.bio/"}
-          description={"A simple date formatter library for Dart"}>
+          description={"Helpful utility page to help work with dates in Dart"}>
           {<SiDart size={16} />}
         </ProjectButton>
         {divider}
