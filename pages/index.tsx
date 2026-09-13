@@ -1,6 +1,6 @@
 import { Lexend } from "next/font/google";
 import Link from "next/link";
-import { Projects, SocialButtons } from "~/components/ui/cards";
+import { SocialButtons } from "~/components/ui/cards";
 import { Header } from "~/components/ui/header";
 import { Separator } from "~/components/ui/separator";
 import { Url } from "~/components/ui/url";
@@ -26,15 +26,12 @@ export default function Home() {
             I&apos;m currently working at <Url href="https://www.gemstonelights.com/" className={urlStyle}>Gemstone Lights</Url> where I help build the best smart lighting product on the market!
           </p>
           <p>
-            I also sometimes write <Link href={"/posts"} className={urlStyle}>blog posts</Link>  here and there about things I find interesting. Learn more <Link href="/about" className={urlStyle}>
-              about me
-            </Link>
+            I also sometimes write <Link href={"/posts"} className={urlStyle}>blog posts</Link>  here and there about things I find interesting.
           </p>
         </div>
         <Separator className="my-4" />
 
         <SocialButtons />
-        <Projects />
       </div>
     </main >
   );
